@@ -1,0 +1,253 @@
+.wrapper {
+    height: 100vh;
+    background:rgba(133, 191, 245, 0.3);
+    background-size: cover;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+/* Cloud */
+.cloud-wrapper{
+    position: relative;
+    left: 100px;
+    z-index: 1;
+    margin: 0 auto;
+    animation-name: cloud;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes cloud {
+0%{left: 0px}
+25%{left: 15px}
+50%{left: 35px}
+75%{left: -50px}
+100%{left: 0px}
+}
+.cloud-base{
+    top: 30px;
+    background: #fff;
+    filter: drop-shadow(0px 5px 10px rgba(175, 215, 243, 0.6));
+    width: 230px;
+    height: 120px;
+    position: relative;
+    border-radius: 100%;
+    z-index: 2;
+}
+.cloud-base div {
+    top: -60px;
+    background: #fff;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border-radius: 100%;
+    margin: 0 auto;
+}
+.cloud-base-shadow{
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: #69c1f8;
+    filter: blur(15px);
+    width: 230px;
+    height: 120px;
+    border-radius: 100px;
+    transform: scale(0.8);
+    opacity: 0.4;
+    z-index: 2;
+}
+.cloud-base-shadow div {
+    position: relative;
+    background: #69c1f8;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    margin: 0 auto;
+    top: -60px;
+}
+.cloud-base-shadow div:after, 
+.cloud-base-shadow div:before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    filter: blur(16px);
+    border-radius: 100%;
+}
+.cloud-base-shadow div:after {
+    right: -12px;
+    top: -20px;
+}
+.cloud-base-shadow div:before {
+    right: -92px;
+    top: 33px;
+}
+/* Sun & Flash*/
+.sun{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(30deg, #ffb347, #fbeb36);
+    position: relative;
+    top: -150px;
+    left: 130px;
+    box-shadow: 0px -6px 36px 0px #fbeb36, 0px 0px 6px 0px #ffb347;
+}
+.sun::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(30deg, rgb(251 235 54/ 30%), 20%, rgb(255 255 255/ 49%));
+    filter: blur(10px);
+    border-radius: 50%;
+}
+/*.flash{
+    position: absolute;
+    left: -20px;
+    bottom: -40px;
+    width: 60px;
+    height: 60px;
+    background: rgb(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 6px 3px rgb(255, 255, 255, 0.4);
+    border-radius: 50%;
+    z-index: 2;
+}
+.flash::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: -10px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    filter: blur(0px);
+    border-radius: 50%;
+   box-shadow: 0px 0px 6px 3px rgb(255, 255, 255, 0.4);
+}*/
+
+/* Rain*/
+
+.drop-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative;
+    top: -200px;
+    left: 100px;
+    margin: 0 auto;
+}
+.mwin-drop {
+    position: relative;
+    background: #3d93fe;
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 0 50% 50% 50% ;
+    transform: rotate(55deg);
+}
+
+.mwin-drop::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #3d93fe;
+    border-radius: 0 50% 50% 50%;
+    box-shadow: /*-2px 3px 3px #1b6cfb,
+                -4px 6px 6px #1b6cfb,*/
+                inset -4px 4px 7px #73a5fa,
+                inset 2px 4px 5px #73a5fa,
+                inset 9px -6px 3px #fff,
+                inset 7px -7px 8px #aBceff
+    ;
+}
+.box-1, .box-2, .box-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.box-2 {
+    position: relative;
+    left: 260px;
+}
+.box-3 {
+    position: relative;
+    left: 500px;
+}
+.groupC, .groupB, .groupD {
+    display: grid;
+    gap: 30px;
+    transform: rotate(15deg);
+}
+/*Rain Animation*/
+
+.drop1 {
+    animation-name: drop1;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes drop1 {
+    0%{top: 0px;}
+    25%{top: 10px;}
+    50%{top: 15px;}
+    75%{top: 50px;}
+    100%{top: 0px;}
+}
+.drop2 {
+    animation-name: drop2;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes drop2 {
+    0%{top: -20px}
+    25%{top: 25px}
+    50%{top: 10px}
+    75%{top: 50px}
+    100%{top: 0px}
+}
+.drop3 {
+    animation-name: drop3;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes drop3 {
+    0%{top: -10px}
+    25%{top: 10px}
+    50%{top: 25px}
+    75%{top: 40px}
+    100%{top: 0px}
+}
+.drop4 {
+    animation-name: drop4;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes drop4 {
+    0%{top: 0px}
+    25%{top: -10px}
+    50%{top: 45px}
+    75%{top: 20px}
+    100%{top: 0px}
+}
